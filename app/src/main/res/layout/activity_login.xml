@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".login">
+
+
+    <LinearLayout
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="40dp"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo_white" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:letterSpacing="0.2"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/orange"
+                android:text="LOG IN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="0dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+
+            <LinearLayout
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Text for the hint -->
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What are you?"
+                    android:textSize="20dp"
+                    android:textColor="@color/black" />
+
+                <!-- Spinner Dropdown for Patient, Doctor, Nurse, Admin -->
+                <Spinner
+                    android:id="@+id/spinnerRole"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:paddingBottom="22dp"
+                    android:textSize="18dp"
+                    android:textStyle="italic"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:hint="Username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/black"
+                app:endIconMode="password_toggle">  <!-- Enable the password toggle eye icon -->
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:paddingBottom="22dp"
+                    android:textSize="18dp"
+                    android:textStyle="italic"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="-20dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:hint="Password"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:textColor="@color/blue"
+                android:text="Forgot your Password?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <Button
+                android:layout_marginTop="60dp"
+                android:id="@+id/loginBtn"
+                android:layout_gravity="center"
+                android:background="@drawable/button_rounded_bgwhite"
+                android:textColor="@color/orange"
+                android:textSize="18dp"
+                android:text="Log in"
+                android:layout_width="115dp"
+                android:layout_height="50dp"
+                android:textAllCaps="false"/>
+
+
+            <LinearLayout
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/login_prompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don't have an account yet?"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/sign_up_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign up"
+                    android:textSize="16sp"
+                    android:textColor="@color/orange"
+                    android:layout_marginStart="4dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
