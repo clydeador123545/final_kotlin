@@ -219,6 +219,7 @@
                                     android:text="🔔 Notification 3"
                                     android:textSize="16sp" />
 
+
                             </LinearLayout>
 
                         </ScrollView>
