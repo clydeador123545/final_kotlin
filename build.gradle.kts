@@ -3,3 +3,14 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
 }
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Correct classpath for google-services plugin in Kotlin DSL
+        classpath("com.google.gms:google-services:4.4.2")
+    }
+}

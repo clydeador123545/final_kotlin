@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "177296070814",
+    "project_id": "clever-spirit-443003-b6",
+    "storage_bucket": "clever-spirit-443003-b6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177296070814:android:e94da30a4d88b170ccc38f",
+        "android_client_info": {
+          "package_name": "com.example.finaloutput"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl9S14LBUotOVVHgvI_PXyen9DiDd0m_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

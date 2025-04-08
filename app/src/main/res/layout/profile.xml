@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    android:id="@+id/main"
+    android:id="@+id/profileSheet"
     android:paddingTop="20dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp">
@@ -41,110 +41,734 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
 
+        <LinearLayout
+            android:paddingBottom="50dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-               <LinearLayout
-                   android:orientation="horizontal"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content">
-
-                   <TextView
-                       android:layout_marginRight="10dp"
-                       android:textSize="23dp"
-                       android:fontFamily="sans-serif"
-                       android:textStyle="bold"
-                       android:textColor="@color/black"
-                       android:textFontWeight="800"
-                       android:text="Basic Information"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"/>
-
-                   <ImageView
-                       android:layout_gravity="center_vertical"
-                       android:src="@drawable/pen"
-                       android:layout_width="20dp"
-                       android:layout_height="20dp"/>
-
-
-               </LinearLayout>
+            <!--        Basic Information-->
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <LinearLayout
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <!-- Label -->
                     <TextView
+                        android:layout_marginRight="10dp"
+                        android:textSize="23dp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textFontWeight="800"
+                        android:text="Basic Information"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sex"
-                        android:textSize="16sp"
-                        android:textColor="@android:color/black"
-                        android:layout_marginBottom="5dp"/>
+                        android:layout_height="wrap_content"/>
 
-                    <!-- Dropdown / Spinner -->
-                    <Spinner
-                        android:layout_marginLeft="-5dp"
-
-                        android:id="@+id/spinner_sex"
-                        android:layout_width="90dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/flag_transparent"/>
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/pen"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
 
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <!-- Label -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sex"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="5dp"/>
+
+                        <!-- Dropdown / Spinner -->
+                        <Spinner
+                            android:layout_marginLeft="-5dp"
+
+                            android:id="@+id/spinner_sex"
+                            android:layout_width="90dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/flag_transparent"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Age Field -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Age"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginTop="-15dp"
+                            android:layout_marginLeft="-5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                            <com.google.android.material.textfield.TextInputEditText
+
+                                android:textSize="13dp"
+
+                                android:textAlignment="viewStart"
+
+                                android:layout_width="75dp"
+                                android:layout_height="match_parent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Birthdate"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="8dp" />
+
+                        <EditText
+                            android:id="@+id/birthdate_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:textSize="13dp"
+
+                            android:textAlignment="viewStart"
+                            android:focusable="false"
+                            android:clickable="true" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
-                    <!-- Age Field -->
+                    <LinearLayout
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="5dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                            <com.google.android.material.textfield.TextInputEditText
+
+                                android:textSize="13dp"
+
+                                android:textAlignment="viewStart"
+
+                                android:layout_width="180dp"
+                                android:layout_height="match_parent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile number"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="5dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                            <com.google.android.material.textfield.TextInputEditText
+
+                                android:textSize="13dp"
+
+                                android:textAlignment="viewStart"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Age"
+                        android:text="Address"
                         android:textSize="16sp"
                         android:textColor="@android:color/black"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_marginBottom="5dp"/>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:layout_marginTop="-15dp"
-                        android:layout_marginLeft="-5dp"
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:boxStrokeColor="@color/black"> <!-- Visible border color -->
 
                         <com.google.android.material.textfield.TextInputEditText
 
                             android:textSize="13dp"
-                            android:textStyle="italic"
-                            android:textAlignment="center"
-                            android:gravity="center"
 
-                            android:layout_width="75dp"
+                            android:textAlignment="viewStart"
+
+                            android:layout_width="match_parent"
                             android:layout_height="25dp"/>
                     </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+<!--            Health and Medication-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginRight="10dp"
+                        android:textSize="23dp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textFontWeight="800"
+                        android:text="Health and Medication"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/pen"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+
+
+                </LinearLayout>
+
+
+<!--                Blood Chronic, Diseases, Past Surgery-->
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Blood Type"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"/>
+
+                        <!-- Spinner with bottom border -->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <Spinner
+                                android:id="@+id/bloodTypeSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:paddingBottom="8dp"/>
+
+                            <!-- Bottom border view -->
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_gravity="bottom"
+                                android:background="@android:color/darker_gray"/>
+                        </FrameLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chronic Diseases"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="5dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginTop="-10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                            <com.google.android.material.textfield.TextInputEditText
+
+                                android:textSize="13dp"
+
+                                android:textAlignment="viewStart"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Past Surgery"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="5dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginTop="-10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                            <com.google.android.material.textfield.TextInputEditText
+
+                                android:textSize="13dp"
+
+                                android:textAlignment="viewStart"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+<!--                Allergies, MEdication taken Regularly-->
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+
+                    <LinearLayout
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Allergies"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="5dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginTop="-10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                            <com.google.android.material.textfield.TextInputEditText
+
+                                android:textSize="13dp"
+
+                                android:textAlignment="viewStart"
+
+
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Medications Taken Regularly"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="5dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginTop="-10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                            <com.google.android.material.textfield.TextInputEditText
+
+                                android:textSize="13dp"
+
+                                android:textAlignment="viewStart"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+                    <LinearLayout
+
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Previous Hospitalizations"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="5dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginTop="-10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                            <com.google.android.material.textfield.TextInputEditText
+
+                                android:textSize="13dp"
+
+                                android:textAlignment="viewStart"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
             </LinearLayout>
 
+
+<!--            Emergency Call-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginRight="10dp"
+                        android:textSize="23dp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="Emergency Contact"
+                        android:textFontWeight="800"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/pen"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+                    <LinearLayout
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name of Emergency Contact"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="5dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginTop="-10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                            <com.google.android.material.textfield.TextInputEditText
+
+                                android:textSize="13dp"
+
+                                android:textAlignment="viewStart"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Relation"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="5dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginTop="-10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                            <com.google.android.material.textfield.TextInputEditText
+
+                                android:textSize="13dp"
+
+                                android:textAlignment="viewStart"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+                    <LinearLayout
+
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Emergency Contact No."
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="5dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_marginTop="-10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxStrokeColor="@color/black"> <!-- Visible border color -->
+
+                            <com.google.android.material.textfield.TextInputEditText
+
+                                android:textSize="13dp"
+
+                                android:textAlignment="viewStart"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/signupBtn"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/button_rounded_bgwhite"
+                    android:textColor="@color/orange"
+                    android:textSize="18dp"
+                    android:text="Reset"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/save"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_rounded_bgwhite"
+                    android:backgroundTint="@color/blue"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+
+
+
         </LinearLayout>
+
+
+
     </ScrollView>
 
 </LinearLayout>

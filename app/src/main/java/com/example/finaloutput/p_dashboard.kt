@@ -1,5 +1,7 @@
 package com.example.finaloutput
 
+import android.content.ClipData.Item
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.MotionEvent
@@ -9,11 +11,14 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.edit
 import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -21,14 +26,20 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 
 class p_dashboard : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
 
     private lateinit var drawerLayout: DrawerLayout
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        auth = Firebase.auth
         enableEdgeToEdge()
         setContentView(R.layout.activity_pdashboard)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -67,7 +78,7 @@ class p_dashboard : AppCompatActivity() {
                     showProfileBottomSheet()
                 }
                 R.id.nav_logout -> {
-
+                    logoutUser()
                 }
             }
             drawerLayout.closeDrawer(GravityCompat.START) // Close after click
@@ -90,15 +101,22 @@ class p_dashboard : AppCompatActivity() {
 
     }
 
+
     private fun showProfileBottomSheet() {
         val bottomSheetDialog = BottomSheetDialog(this)
         val view = layoutInflater.inflate(R.layout.profile, null)
         bottomSheetDialog.setContentView(view)
 
+
+
         val closeButton = view.findViewById<ImageView>(R.id.btn_close)
         closeButton.setOnClickListener {
             bottomSheetDialog.dismiss()
         }
+
+
+//        val textView = findViewById<TextView>(R.id.birthdate_picker)
+//        textView.background = ContextCompat.getDrawable(this, R.drawable.text_view_border_bottom)
 
         // Find the Spinner
         val spinner: Spinner = view.findViewById(R.id.spinner_sex)
@@ -123,6 +141,21 @@ class p_dashboard : AppCompatActivity() {
         }
 
         bottomSheetDialog.show()
+    }
+
+    private fun logoutUser() {
+        auth.signOut()
+        startActivity(Intent(this, login::class.java))
+        finish()
+        Toast.makeText(this@p_dashboard, "Logout Successful", Toast.LENGTH_SHORT).show()
+
+    }
+
+    private fun clearUserData() {
+        getSharedPreferences("user_prefs", MODE_PRIVATE).edit {
+            clear()
+            apply()
+        }
     }
 
 

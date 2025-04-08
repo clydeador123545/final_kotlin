@@ -6,4 +6,15 @@
     </style>
 
     <style name="Theme.FinalOutput" parent="Base.Theme.FinalOutput" />
+
+    <!-- Add this below your existing themes -->
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppBottomSheetStyle</item>
+    </style>
+
+    <style name="AppBottomSheetStyle" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="behavior_peekHeight">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
 </resources>

@@ -9,5 +9,13 @@
     <string name="open">Open Navigation</string>
     <string name="close">Close Navigation</string>
 
+    <string-array name="role_options">
+        <item>Select Role</item>
+        <item>Patient</item>
+        <item>Doctor</item>
+        <item>Nurse</item>
+        <item>Admin</item>
+    </string-array>
+
 
 </resources>
